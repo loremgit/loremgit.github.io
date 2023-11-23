@@ -1,8 +1,17 @@
+:root {
+--contrast: black;
+--contrast-2: #616d8a;
+--yellow-light: #ffd43b;
+--base-2: #f7f8f9;
+--accent: #35adce;
+}
+
+
 body {
   font-family: Poppins,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, a, button {
+h1, h2, h3, h4, h5, h6, button {
   font-weight: 700;
 }
 
@@ -16,7 +25,7 @@ h1, h2, h3, h4, h5, h6, a, button {
 
 .App-header {
   height: 58px;
-  background: rgba(0,0,0,0.98);
+  baaaaaaackground: #1e3050;
 }
 .App-header, .App-header a {
   color: #fff;
@@ -41,10 +50,18 @@ li > .LinksButton:hover, .LinksButton.SplitDropdown-button:hover {
   max-height: none;
 }
 
+.Header-primary > ul li:first-child a {
+color: white !important;
+  font-weight: 500 !important;
+  font-size: 1.5em;
+border-left: 1px solid;
+border-radius: 0;
+}
+
 
 .IndexPage .Hero {
-  background-color: #35adce !important;
-  color: #000 !important;
+  background-color: var(--accent) !important;
+  color: var(--header-bg) !important;
 }
 .Hero {
   border: 0;
@@ -65,7 +82,7 @@ font-weight: 700;
 display: inline;
 position: relative;
 }
-.Hero-close {
+.Hero-subtitle, .Hero-close {
   display: none;
 }
 
@@ -100,10 +117,23 @@ border-radius: 0;
   transform: translateX(80%);
 }
 
+.IndexPage-nav.sideNav .Button, .IndexPage-toolbar .Button {
+  line-height: 28px;
+  background: var(--contrast);
+}
 
+.IndexPage-nav.sideNav .Button--primary {
+background: var(--yellow-light);
+font-size: 20px;
+color: var(--contrast);
+-webkit-box-shadow: 0 4px 0 var(--contrast);
+box-shadow: 0 4px 0 var(--contrast);
+border-radius: 50px;
+border: 2px solid var(--contrast);
+}
 .sideNav {
-background-color: #35adce;
-background-image: url('https://static.giffgaff.com/design-system/style-guide/55.3.0/images/textures/softer.png');
+background-color: var(--base-2);
+backgrround-image: url('https://static.giffgaff.com/design-system/style-guide/55.3.0/images/textures/softer.png');
 margin-bottom: 50px;
 }
 .sideNav > ul {
@@ -112,13 +142,14 @@ margin-top: 0;
 padding-bottom: 50px;
 padding-top: 30px;
 }
-.sideNav button.Button--primary {
+
+
+/*.sideNav button.Button--primary {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   white-space: nowrap;
   border-radius: 24px;
   transform: translateY(4px);
-  background-color: #000 !important;
   display: inline-block !important;
   font-weight: 900;
   font-size: 20px;
@@ -127,7 +158,7 @@ padding-top: 30px;
   width: unset !important;
 }
 .sideNav button.Button--primary .Button-label {
-  border: solid 2px #000;
+  border: solid 2px var(--header-bg);
   border-radius: 24px;
   line-height: 44px;
   display: inline-block;
@@ -135,31 +166,44 @@ padding-top: 30px;
   transform: translateY(-4px);
   padding: 0 24px;
   position: relative;
-  color: #000;
+  color: var(--header-bg);
   background-color: #fcc31e;
 text-transform: lowercase;
 }
 .sideNav button.Button--primary .Button-label::first-letter {
 text-transform: uppercase;
-}
+} */
+
+
 .sideNav ul li a {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+color: var(--header-bg) !important;
 }
 .sideNav ul li i {
-color: black !important;
+color: var(--header-bg) !important;
 }
 .DiscussionListItem {
   position: relative;
-  margin-right: -15px;
+  margin-right: -0px;
   padding-right: 25px;
   padding-left: 15px;
-  margin-left: -15px;
+  margin-left: -0px;
   border-radius: 0;
   transition: background .2s;
 }
+}
 
+
+  @media (min-width: 992px) {
+.sideNav {
+  width: 22%;
+margin-right: 0;
+}
+.sideNav > ul {
+  width: 100%;
+}
 }
 
 
@@ -173,11 +217,11 @@ color: black !important;
 
 .IndexPage-toolbar {
   margin-bottom: 24px;
-  margin-left: -15px;
-  margin-right: -15px;
+  marrgin-left: -15px;
+  marrgin-right: -15px;
 }
-.IndexPage-toolbar button {
-  background: black;
+.Button {
+  background: var(--header-bg);
   border-radius: 0;
   color: white;
 }
@@ -192,9 +236,9 @@ color: black !important;
 gap: 50px;
 }
 .App:not(.hasPane) .DiscussionListItem {
-  border: solid 2px #000;
+  border: 2px solid var(--contrast);
   margin-bottom: 16px;
   position: relative;
   padding-bottom: 4px;
+border-radiius: 12px;
 }
-
